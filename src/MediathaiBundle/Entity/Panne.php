@@ -1,0 +1,139 @@
+<?php
+
+namespace MediathaiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Panne
+ */
+class Panne
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $nom;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return Panne
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+    /**
+     * @var \MediathaiBundle\Entity\Media
+     */
+    private $image;
+
+    /**
+     * @var \MediathaiBundle\Entity\Model
+     */
+    private $model;
+
+
+    /**
+     * Set image
+     *
+     * @param \MediathaiBundle\Entity\Media $image
+     * @return Panne
+     */
+    public function setImage(\MediathaiBundle\Entity\Media $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \MediathaiBundle\Entity\Media 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set model
+     *
+     * @param \MediathaiBundle\Entity\Model $model
+     * @return Panne
+     */
+    public function setModel(\MediathaiBundle\Entity\Model $model = null)
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    /**
+     * Get model
+     *
+     * @return \MediathaiBundle\Entity\Model 
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
+    /**
+     * @var integer
+     */
+    private $prix;
+
+
+    /**
+     * Set prix
+     *
+     * @param integer $prix
+     * @return Panne
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get prix
+     *
+     * @return integer 
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+}

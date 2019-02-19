@@ -1,0 +1,33 @@
+MediathaiBundle\Entity\Reparateur:
+    type: entity
+    table: null
+    repositoryClass: MediathaiBundle\Repository\ReparateurRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        prenom:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        telephone:
+            type: string
+            length: 255
+        photo:
+            type: string
+            length: 255
+        note:
+            type: integer
+            nullable: true
+    oneToOne:
+      image:
+        targetEntity: Media
+    lifecycleCallbacks: {  }

@@ -1,0 +1,21 @@
+MediathaiBundle\Entity\Couleur:
+    type: entity
+    table: null
+    repositoryClass: MediathaiBundle\Repository\CouleurRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+    manyToOne:
+      model:
+        targetEntity: Model
+    oneToOne:
+      image:
+        targetEntity: Media
+    lifecycleCallbacks: {  }

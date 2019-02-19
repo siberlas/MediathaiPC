@@ -1,0 +1,163 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <!--body start-->
+{{ parent() }}
+    <!--<section id="headerBoutique" >
+
+        <h2> BOUTIQUE</h2>
+    </section>--->
+    <!--  slider -->
+    <!--  prduct shop Page -->
+    <section id="my-store" class="my-store-main-block block-spacing">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 btm-mrgn-sm">
+                    <div id="carousel" class="carousel slide my-store-carousel" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active" data-thumb="0">
+                                <img src="{{ asset('images/papa.jpg')}}" class="img-responsive" alt="location">
+                            </div>
+                            <div class="item" data-thumb="1">
+                                <img src="{{ asset('images/captain.jpg')}}" class="img-responsive" alt="location">
+                            </div>
+                            <div class="item" data-thumb="2">
+                                <img src="{{ asset('images/message.jpg')}}" class="img-responsive" alt="location">
+                            </div>
+                            <div class="item" data-thumb="3">
+                                <img src="{{ asset('images/carte.jpg')}}" class="img-responsive" alt="location">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <div id="thumbcarousel" class="carousel slide my-store-carousel-thumb" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="{{ asset('images/papa_mini.jpg')}}" class="img-responsive" alt="location"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="{{ asset('images/captain_mini.jpg')}}" class="img-responsive" alt="location"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="{{ asset('images/message_mini.jpg')}}" class="img-responsive" alt="location"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div data-target="#carousel" data-slide-to="3" class="thumb"><img src="{{ asset('images/carte_mini.jpg')}}" class="img-responsive" alt="location"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="item">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div data-target="#carousel" data-slide-to="0" class="thumb"><img src="{{ asset('images/location/location-thumb-01.jpg')}}" class="img-responsive" alt="location"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div data-target="#carousel" data-slide-to="1" class="thumb"><img src="{{ asset('images/location/location-thumb-02.jpg')}}" class="img-responsive" alt="location"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div data-target="#carousel" data-slide-to="2" class="thumb"><img src="{{ asset('images/location/location-thumb-03.jpg')}}" class="img-responsive" alt="location"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                            <div data-target="#carousel" data-slide-to="3" class="thumb"><img src="{{ asset('images/location/location-thumb-04.jpg')}}" class="img-responsive" alt="location"></div>
+                                        </div>
+                                    </div>
+                                </div>-->
+                            </div>
+                            <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev">
+                                <i class="fa fa-chevron-left"></i>
+                            </a>
+                            <a class="right carousel-control" href="#thumbcarousel" role="button" data-slide="next">
+                                <i class="fa fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-padding-left">
+                    <div class="my-store-dtl">
+                        <div class="section-left">
+                            <h5 class="section-heading">Contacts</h5>
+                        </div>
+                        <div class="my-store-contact">
+                            <div class="contact-icon"><i class="fa fa-map-marker"></i></div>
+                            <div class="my-store-contact-dtl">
+                                <h6 class="contact-heading">Adresse</h6>
+                                <p>73 bis rue de merlan <br>93130 Noisy-le-sec</p>
+                            </div><hr>
+                        </div>
+                        <div class="my-store-contact">
+                            <div class="contact-icon"><i class="fa fa-phone"></i></div>
+                            <div class="my-store-contact-dtl">
+                                <h5 class="contact-heading">Téléphone &amp; E-mail</h5>
+                                <p><a href="tel:61383766284">06 95 33 41 46</a><br>
+                                    <a href="mailto:info@envato.com?Subject=Hello%20again" target="_top">mediathaipc@gmail.com.com</a></p>
+                            </div><hr>
+                        </div>
+                        <div class="my-store-contact">
+                            <div class="contact-icon"><i class="fa fa-calendar-check-o"></i></div>
+                            <div class="my-store-contact-dtl">
+                                <h5 class="contact-heading">Ouverture</h5>
+                                <p>lundi – Samedi <br>9h00 – 18h00</p>
+                            </div>
+                        </div>
+                      <!--  <div class="make-appointment-btn">
+                            <a href="appointment.html" class="btn btn-default btn-blue btn-hover-effect"><i class="fa fa-calendar"></i>Make An Appointment</a>
+                        </div>
+                        <div class="location-btn">
+                            <a href="#" class="btn btn-default btn-orange btn-hover-effect"><i class="fa fa-share-alt"></i>Share Our Location</a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end product shop -->
+
+<!-- footer -->
+<section id="footer" class="footer-main-block">
+    <div class="container">
+        <div class="footer-info">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-block">
+                    <div class="section-left">
+                    </div>
+                    <div class="footer-dtl">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-block">
+                    <div class="section-left">
+
+                    </div>
+                    <div class="footer-dtl">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-block">
+                    <div class="section-left">
+
+                    </div>
+                    <div class="footer-dtl">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-end-block text-center">Copyright &copy; 2017 <a href="index.html">MediaThaiPc</a></div>
+</section>
+<!-- end footer -->
+    <!--body end -->
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#map-location').mapit();
+        });
+    </script>
+{% endblock %}
+

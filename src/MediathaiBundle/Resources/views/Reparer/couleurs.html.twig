@@ -1,0 +1,343 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <!--body start-->
+{{ parent() }}
+    <!--  slider -->
+    {% set smarthoneSelected = 'active'%}
+    {% set colorSelected = '' %}
+    {% set pannesSelected = ''%}
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="fil" class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-1 col-sm-offset-1 col-sm-1 col-xs-offset-0 col-xs-2" id="filPrevious">
+                            <a class="glyphicon glyphicon-arrow-left glyphicon-ring" href="{{ path('mediathai_models',{'marque_id' : marque_id }) }}"></a>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                            <div class="row">
+                                {% for app,nom in fil  %}
+                                    {% if(app == 'Appareil') %}
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" id="infoFil">
+                                            <a href="{{ path('mediathai_services',{'service_id' : service_id}) }}">{{ app }}</a><br/>
+                                            <h7 >{{ nom }}</h7>
+                                        </div>
+                                    {% elseif app == 'Model' %}
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" id="infoFil">
+                                            <a href="{{ path('mediathai_models',{'marque_id' : marque_id}) }}">{{ app }}</a><br/>
+                                            <h7 >{{ nom }}</h7>
+                                        </div>
+                                    {% elseif app =='Couleur' %}
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" id="infoFil">
+                                            <a href="{{ path('mediathai_couleurs',{'model_id' : model_id}) }}">{{ app }}</a><br/>
+                                            <h7 >{{ nom }}</h7>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" id="infoFil">
+                                    <a href="#">Couleur</a><br/>
+                                    <h7 ></h7>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="tab-content">
+            <div  id="couleur">
+                <div class="container">
+                    <div class="section">
+                        <h5 class="section-sub-heading">Couleur</h5>
+                        <h2 class="section-heading">Iphone</h2>
+                    </div>
+                    <div class="row">
+                        {% for couleur in couleurs %}
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="service-block-thai">
+                                <a href="{{ path('mediathai_pannes',{'model_id' : model_id, 'couleur_id' : couleur.id }) }}"> {{ couleur.nom }}</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+    <!--  services two appareil -->
+
+    <!--  services feature -->
+    <section id="service-feature" class="service-feature service-feature-one">
+        <div class="parallax" style="background-image: url('images/service/service-bg.jpg')">
+            <div class="overlay-bg"></div>
+            <div class="container">
+                <div class="section">
+                    <h5 class="section-sub-heading">Style - 2</h5>
+                    <h2 class="section-heading">What We Do For You</h2>
+                    <p>Quisque vel pulvinar velit. Aenean quis orci lacinia, iaculis arcueu hendrerit justo. Proin non purus sit amet diam posuere pellenue Mauris tempus rutrum eleifend. Sed volutpat tellus eget.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="service-feature-block">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                    <div class="service-icon">
+                                        <a href="services-detail.html"><i class="flaticon-game-console"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+                                    <div class="block-dtl">
+                                        <a href="services-detail.html"><h5 class="block-heading">Smart Phone’s</h5></a>
+                                        <p>Nestibulum nec rutrum augue scelerisqu eros nec nisi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="service-feature-block">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                    <div class="service-icon">
+                                        <a href="services-detail.html"><i class="flaticon-desktop"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+                                    <div class="block-dtl">
+                                        <a href="services-detail.html"><h5 class="block-heading">Mobile Tablet’s</h5></a>
+                                        <p>Nestibulum nec rutrum augue scelerisqu eros nec nisi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="service-feature-block">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                    <div class="service-icon">
+                                        <a href="services-detail.html"><i class="flaticon-led"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+                                    <div class="block-dtl">
+                                        <a href="services-detail.html"><h5 class="block-heading">LED/LCD Screen’s</h5></a>
+                                        <p>Nestibulum nec rutrum augue scelerisqu eros nec nisi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="service-feature-block">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                    <div class="service-icon">
+                                        <a href="services-detail.html"><i class="flaticon-desktop"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+                                    <div class="block-dtl">
+                                        <a href="services-detail.html"><h5 class="block-heading">Desktop &amp; Laptop</h5></a>
+                                        <p>Nestibulum nec rutrum augue scelerisqu eros nec nisi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="service-feature-block">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                    <div class="service-icon">
+                                        <a href="services-detail.html"><i class="flaticon-game-console"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+                                    <div class="block-dtl">
+                                        <a href="services-detail.html"><h5 class="block-heading">Game Console</h5></a>
+                                        <p>Nestibulum nec rutrum augue scelerisqu eros nec nisi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="service-feature-block">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                    <div class="service-icon">
+                                        <a href="services-detail.html"><i class="flaticon-filled-music"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+                                    <div class="block-dtl">
+                                        <a href="services-detail.html"><h5 class="block-heading">Music System’s</h5></a>
+                                        <p>Nestibulum nec rutrum augue scelerisqu eros nec nisi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  end service feature -->
+<!-- footer -->
+<section id="footer" class="footer-main-block">
+    <div class="container">
+        <div class="footer-info">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-block">
+                    <div class="section-left">
+                    </div>
+                    <div class="footer-dtl">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-block">
+                    <div class="section-left">
+
+                    </div>
+                    <div class="footer-dtl">
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 footer-block">
+                    <div class="section-left">
+
+                    </div>
+                    <div class="footer-dtl">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-end-block text-center">Copyright &copy; 2017 <a href="index.html">MediaThaiPc</a></div>
+</section>
+<!-- end footer -->
+    <!--body end -->
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% set marqueSelected = '' %}
+    <script type="text/javascript">
+
+        var services = [];
+        var pannes =[];
+        var panne;
+        var url;
+        var nbPanne =0;
+        {% set test ="" %}
+
+        $(function() {
+            $('#map-location').mapit();
+        });
+
+//        $('#navService li a').click(function () {
+//            console.log('test toggle');
+//        })
+
+
+        $('#smartphones a').click(function () {
+           $('#navSmartphone').removeClass('active');
+            $('#navModel').addClass('active');
+            services['smartphone'] = $(this,'a').html();
+            $('#smartphones a').each(function () {
+                $(this).parent().css('border', '3px solid grey');
+            })
+            $(this).parent().css('border', '3px solid red');
+
+            $("#navSmartphone h6").text(services['smartphone'].trim());
+            console.log(services['smartphone']);
+        });
+
+        $('#model a').click(function () {
+            $('#navModel').removeClass('active');
+            $('#navColor').addClass('active');
+            services['model'] = $(this, 'a').html();
+            $(this).parent().css('border', '3px solid red');
+            $("#navModel h6").text(services['model'].trim());
+            console.log(services['model']);
+        })
+
+        $('#couleur a').click(function () {
+            $('#navColor').removeClass('active');
+            $('#navPannes').addClass('active');
+            services['couleur'] = $(this, 'a').html();
+            $(this).parent().css('border', '3px solid red');
+            $("#navColor h6").text(services['couleur'].trim());
+            console.log(services['couleur']);
+        })
+
+        $('#pannes .service-block-thai a').click(function () {
+           panne = $(this, 'a').html();
+           if(pannes.indexOf(panne.trim()) == -1) {
+               pannes.push(panne.trim());
+               services['pannes'] = pannes;
+               nbPanne = nbPanne +1;
+               $("#navPannes h6").text(nbPanne);
+               console.log(services['pannes']);
+               $(this).parent().css('border', '3px solid red');
+           }
+           else {
+               pannes.splice(pannes.indexOf(panne),1);
+               services['pannes'] = pannes;
+               nbPanne = nbPanne -1;
+               $("#navPannes h6").text(nbPanne);
+               console.log(services['pannes']);
+               $(this).parent().css('border', '3px solid grey');
+           }
+        })
+
+        $('#validation').click(function () {
+            var obServices = [];
+            var smartphone = services['smartphone'].trim();
+            var model = services['model'].trim();
+            var couleur = services['couleur'].trim();
+            var pannes = services['pannes'];
+
+            obServices.push('smartphone:'+smartphone);
+            obServices.push( 'model:'+model);
+            obServices.push( 'couleur:'+couleur);
+            obServices.push( '|pannes:'+pannes);
+
+            url = url.replace("obServices",obServices);
+
+            console.log(url);
+            $(this).attr('href',url)
+        })
+
+
+//        $('.service-block-thai a').each(function () {
+//            $(this).click(function () {
+//                if ($('.navRight').hasClass('active'))
+//                    $('.navRight').next().addClass('active');
+//                })
+//            })
+////
+//        click(function() {
+//                console.log('test toggle');
+//                $('#marque').next().attr('class','active');
+//            })
+
+
+    </script>
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,195 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <!--body start-->
+    {{ parent() }}
+
+    {% set prixTotal = 0 %}
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="fil" class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-offset-1 col-lg-1 col-md-offset-1 col-md-1 col-sm-offset-1 col-sm-1 col-xs-offset-0 col-xs-2" id="filPrevious">
+                            <a class="glyphicon glyphicon-arrow-left glyphicon-ring" href="{{ path('mediathai_pannes',{'model_id' : model_id, 'couleur_id' : couleur_id }) }}"></a>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                            <div class="row">
+                                {% for app,nom in fil  %}
+                                    {% if(app == 'Appareil') %}
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" id="infoFil">
+                                            <a href="{{ path('mediathai_services',{'service_id' : service_id}) }}">{{ app }}</a><br/>
+                                            <h7 >{{ nom }}</h7>
+                                        </div>
+                                    {% elseif app == 'Model' %}
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" id="infoFil">
+                                            <a href="{{ path('mediathai_models',{'marque_id' : marque_id}) }}">{{ app }}</a><br/>
+                                            <h7 >{{ nom }}</h7>
+                                        </div>
+                                    {% elseif app =='Couleur' %}
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" id="infoFil">
+                                            <a href="{{ path('mediathai_couleurs',{'model_id' : model_id}) }}">{{ app }}</a><br/>
+                                            <h7 >{{ nom }}</h7>
+                                        </div>
+                                    {% else %}
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" id="infoFil">
+                                            <a href="{{ path('mediathai_pannes', {'model_id' : model_id, 'couleur_id' : couleur_id}) }}">{{ app }}</a><br/>
+                                            {% if nom is iterable   %}
+                                                {{ '('~nom.0~'..)' }}
+                                            {% else %}
+                                                {{ nom }}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Shop Page -->
+    <section id="shop-page" class="shop-page-main-block block-spacing">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="section">
+                                <h5 class="section-sub-heading">réparation</h5>
+                                <h2 class="section-heading">Récapitulatif</h2>
+                            </div>
+                            {% for titre , info in tabInfo %}
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    {{ titre~': ' }} {{ info }}
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <div class="row">
+                                <div class="col-lg-offset-4 col-lg-4">
+                                    <a href="#"><img src="images/iphone7.jpg" class="img-responsive" alt="shoping-img--1"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="side-widget view-cart">
+                        <div class="section-left">
+                            <h5 class="section-heading">Devis réparation</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                    <div class="cart-dtl">
+                                        {% for panne in tabObjectPannes%}
+                                        <div class="prod-remove"><a href="{{ path('mediathai_deletepanne',{'panne': panne.nom })}}"><i class="fa fa-window-close-o"></i></a></div>
+                                        <div class="cart-prod-heading">{{ panne.nom }}
+                                            <p>:    {{ panne.prix }}€</p>
+                                        </div>
+                                        <hr>
+                                            {% set prixTotal =  prixTotal + panne.prix %}
+                                        {% endfor %}
+                                        <div class="cart-prod-total">Total: </div>
+                                        <p>{{ prixTotal }}€</p>
+                                    </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="product-img">
+                                    <a href="#"><img src="images/shop/shop-two-02.jpg" class="img-responsive" alt="shop-img-1"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-btn">
+                            <a href="#titreAppointement" class="btn btn-default btn-blue btn-hover-effect"><i class="fa fa-shopping-cart"></i>Réserver ma réparation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end shop two -->
+    <section id="appointment-page" class="appointment-page-block">
+        <div class="container">
+            <div class="section">
+                <h3 id="titreAppointement" class="section-heading">Réserver réparation</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="appointment-form form-style-one">
+                        {{ form_start(form,{'attr' :  {'class' : 'contact-form'}}) }}
+                        {{ form_errors(form) }}
+
+                            <input type="hidden" id="subject" name="subject" value="Complete Appointment Form">
+
+                         <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        {{ form_widget(form.nomClient,{'attr' : {'class':'form-control', 'placeholder' : 'Nom', 'id' : 'name1', 'name' : 'name' ,'required' : 'required'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        {{ form_widget(form.prenomClient,{'attr' : {'class':'form-control', 'placeholder' : 'Prénom', 'required' : 'required'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        {{ form_widget(form.mailClient,{'attr' : {'class':'form-control', 'placeholder' : 'Email', 'required' : 'required'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                        {{ form_widget(form.telClient,{'attr' : {'class':'form-control', 'placeholder' : 'Téléphone', 'required' : 'required'}}) }}
+                                    </div>
+                                </div>
+                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                 <div class="form-group">
+                                     {{ form_widget(form.adresseClient,{'attr' : {'class':'form-control', 'placeholder' : 'Adresse', 'required' : 'required'}}) }}
+                                 </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="form-group has-feedback">
+                                        {{ form_widget(form.date,{'attr' : {'class':'form-control date-pick', 'placeholder' : 'Date', 'required' : 'required'}}) }} <i class="fa fa-calendar form-control-feedback"></i>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                     <div class="form-group has-feedback">
+                                         {{ form_widget(form.heure,{'attr' : {'class':'form-control time-picker', 'placeholder' : 'Heure', 'required' : 'required'}}) }}<i class="fa fa-clock-o form-control-feedback"></i>
+                                     </div>
+                                 </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        {{ form_widget(form.commentaire,{'attr' : {'class':'form-control', 'placeholder' : 'Message..', 'required' : 'required'}}) }}
+                                    </div>
+                                    {{ form_label(form.valider,"valider") }}
+                                    {{ form_widget(form.valider,{'attr' : {'class':'btn btn-default btn-orange btn-hover-effect', 'placeholder' : 'Message..', 'required' : 'required'}}) }}
+                                </div>
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end appointment form -->
+    <!--body end -->
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $('#map-location').mapit();
+        });
+
+
+    </script>
+
+
+{% endblock %}
+

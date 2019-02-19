@@ -1,0 +1,59 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 16/04/2017 18:36
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("..//fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        /*font-size: 20px;*/
+font-style: normal;
+/*margin-left: 20px;*/
+}
+
+.flaticon-play-button:before { content: "\f100"; }
+.flaticon-cart:before { content: "\f101"; }
+.flaticon-play-icon:before { content: "\f102"; }
+.flaticon-like:before { content: "\f103"; }
+.flaticon-settings:before { content: "\f104"; }
+.flaticon-group:before { content: "\f105"; }
+.flaticon-award:before { content: "\f106"; }
+.flaticon-customer:before { content: "\f107"; }
+.flaticon-cpu:before { content: "\f108"; }
+.flaticon-guarantee:before { content: "\f109"; }
+.flaticon-24-hours:before { content: "\f10a"; }
+.flaticon-technician:before { content: "\f10b"; }
+.flaticon-warranty:before { content: "\f10c"; }
+.flaticon-wallet:before { content: "\f10d"; }
+.flaticon-repair-tools:before { content: "\f10e"; }
+.flaticon-led:before { content: "\f10f"; }
+.flaticon-desktop:before { content: "\f110"; }
+.flaticon-music:before { content: "\f111"; }
+.flaticon-filled-music:before { content: "\f112"; }
+.flaticon-game-console:before { content: "\f113"; }
+.flaticon-console:before { content: "\f114"; }
+.flaticon-laptop:before { content: "\f115"; }
+.flaticon-lcd:before { content: "\f116"; }
+.flaticon-computer:before { content: "\f117"; }
+.flaticon-tablet:before { content: "\f118"; }
+.flaticon-smart-phone:before { content: "\f119"; }
+.flaticon-tablet-fill:before { content: "\f120"; }
+.flaticon-smart-phone-fill:before { content: "\f121"; }

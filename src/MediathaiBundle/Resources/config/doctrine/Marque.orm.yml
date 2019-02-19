@@ -1,0 +1,25 @@
+MediathaiBundle\Entity\Marque:
+    type: entity
+    table: null
+    repositoryClass: MediathaiBundle\Repository\MarqueRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        description:
+            type: string
+            length: 255
+            nullable: true
+    manyToOne:
+      service:
+        targetEntity: Service
+    oneToOne:
+          image:
+            targetEntity: Media
+    lifecycleCallbacks: {  }

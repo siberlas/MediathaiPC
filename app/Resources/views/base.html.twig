@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+       **********************************************************************************************************
+           Copyright (c) 2017 .
+       **********************************************************************************************************  -->
+<!--
+Template Name: Repair Shop - Mobile And Gadget Repairing HTML Template
+Version: 1.0.0
+Author: wp-organic
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]> -->
+<html lang="en">
+<!-- <![endif]-->
+<!-- head -->
+    <head>
+        <title>{% block title %}Repair Shop - Mobile &amp; Gadget Repairing HTML Templat{% endblock %}</title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta name="description" content="Repair Shop - HTML Template" />
+        <meta name="keywords" content="Repair Shop HTML Template, Phone, html template, html theme">
+        <meta name="author" content="wp-organic" />
+        <meta name="MobileOptimized" content="320" />
+        <link rel="icon" type="image/icon" href="{{ asset('images/favicon/favicon.ico') }}"> <!-- favicon-icon -->
+        {% block stylesheets %}
+            <!-- theme style -->
+            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>   <!-- bootstrap css -->
+            <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/><!-- fontawesome css -->
+            <link href="{{ asset('css/flaticon.css') }}" rel="stylesheet" type="text/css"/> <!-- flat icons css -->
+            <link href="{{ asset('https://fonts.googleapis.com/css?family=Montserrat:300i,400,600,700,800i|Roboto:400,700i|Work+Sans:400,500,600,700') }}" rel="stylesheet">
+            <!-- google font -->
+            <link href="{{ asset('css/menumaker.css') }}" rel="stylesheet" type="text/css"/>  <!-- menu css -->
+            <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet" type="text/css"/>  <!-- owl carousel css -->
+            <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet" type="text/css"/> <!-- magnify popup css -->
+            <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet" type="text/css"/>   <!-- datepicker css -->
+            <link href="{{ asset('css/jquery.timepicker.css') }}" rel="stylesheet" type="text/css"/>   <!-- timepicker css -->
+            <link href="{{ asset('css/jquery.rateyo.css') }}" rel="stylesheet" type="text/css"/>   <!-- rateyo css -->
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css"/>  <!-- custom css --
+            <!-- end theme style -->
+        {% endblock %}
+       <!-- <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
+    </head>
+<!-- end head -->
+    <body>
+        {% block body %}
+            <!-- preloader -->
+         <!--   <div class="preloader">
+                <div class="status">
+                    <div class="status-message">
+                    </div>
+                </div>
+            </div>-->
+            <!-- end preloader -->
+
+            <!--  top bar -->
+         <!--   <section class="top-bar top-bar-three hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="top-bar-dtl">
+                                <span><i class="fa fa-map-marker"></i></span>73 bis rue de merlan, 93130 Noisy-le-sec-->
+                                <!--   <span class="bell-dtl"><i class="fa fa-bell"></i></span>24 Hours Phones Repair Service Providers-->
+                    <!--        </div>
+                            <div class="social-icon hidden-sm">
+                                <ul>
+                                    <li><a href="{{ asset('https://www.facebook.com/mediathaipc') }}" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="{{ asset('https://www.twitter.com/') }}" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="{{ asset('https://plus.google.com/') }}" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="{{ asset('https://www.linkedin.com/') }}" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="{{ asset('https://vimeo.com/') }}" target="_blank" class="vimeo"><i class="fa fa-vimeo"></i></a></li>
+                                    <li><a href="{{ asset('https://www.behance.net/') }}" target="_blank" class="behance"><i class="fa fa-behance"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+            <!--  end top bar -->
+
+
+            <!--  navigation -->
+            <section class="logo-bar" id="menuFix">
+                <div class="container">
+                    <div class="row">
+                        <div id="logoMenu" class="col-lg-offset-3 col-lg-2 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4 col-xs-12">
+                            <div class="row">
+                                <div id="logo" class="col-lg-offset-4 col-lg-2 col-md-3 col-sm-4 col-xs-offset-5  col-xs-7">
+                                    <a href="{{ path('mediathai_homepage') }}">
+                                        <img src="{{ asset('images/icons/logoThaiMarker.png') }}" alt="logo">
+                                    </a>
+                                </div>
+                                <div  id="logoTitre" class="col-lg-2 col-md-9 col-sm-7  col-xs-offset-4 col-xs-3">
+                                    <a href="{{ path('mediathai_homepage') }}">
+                                        <span> MediathaiPC </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 col-xs-12">
+                            <div class="navigation-menu">
+                                <div id="cssmenu">
+                                    <ul>
+                                        <li><a href="{{ path('mediathai_homepage') }}#Reparer">Reparer</a>  </li>
+                                        <li><a href="{{ path('mediathai_boutique') }}">Boutique</a></li>
+                                        <li><a href="{{ path('mediathai_homepage') }}#about">Qui sommes nous</a></li>
+                                        <li><a href="{{ path('mediathai_homepage') }}#contact">Contactez nous</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!--  nav bar -->
+            <!--<header class="nav-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="navigation-menu">
+                                <div id="cssmenu">
+                                    <ul>
+                                        <li><a href="{{ path('mediathai_homepage') }}#Reparer">Reparer</a>  </li>
+                                        <li><a href="{{ path('mediathai_boutique') }}">Boutique</a></li>
+                                        <li><a href="{{ path('mediathai_homepage') }}#about">Qui sommes nous</a></li>
+                                        <li><a href="{{ path('mediathai_homepage') }}#contact">Contactez nous</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>-->
+            <!--  end logo bar -->
+            <!--'js/theme.js''js/jquery.mapit2.js'-->
+            <!--  end navigation -->
+        {% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script> <!-- jquery library js -->
+            <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script> <!-- bootstrap js -->
+            <script type="text/javascript" src="{{ asset('js/owl.carousel.js') }}"></script> <!-- owl carousel js -->
+            <script type="text/javascript" src="{{ asset('js/jquery.ajaxchimp.js') }}"></script> <!-- mail chimp js -->
+            <script type="text/javascript" src="{{ asset('js/smooth-scroll.js') }}"></script> <!-- smooth scroll js -->
+            <script type="text/javascript" src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script> <!-- magnify popup js-->
+            <script type="text/javascript" src="{{ asset('js/jquery.counterup.js') }}"></script> <!-- facts count js-->
+            <script type="text/javascript" src="{{ asset('js/waypoints.min.js') }}"></script> <!-- facts count js required for jquery.counterup.js file -->
+            <script type="text/javascript" src="{{ asset('js/menumaker.js') }}"></script> <!-- menu js-->
+            <script type="text/javascript" src="{{ asset('js/price-slider.js') }}"></script> <!-- price slider js -->
+            <script type="text/javascript" src="{{ asset('js/jquery.elevatezoom.js') }}"></script> <!-- image zoom js-->
+            <script type="text/javascript" src="{{ asset('js/jquery.countdown.js') }}"></script>  <!-- event countdown js -->
+            <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.js') }}"></script> <!-- date picker js -->
+            <script type="text/javascript" src="{{ asset('js/jquery.timepicker.js') }}"></script> <!-- Time picker js -->
+            <script type="text/javascript" src="{{ asset('js/jquery.rateyo.js') }}"></script> <!-- Rateyo js -->
+           <!-- <script type="text/javascript" src="{{ asset('js/jquery.mapit2.js') }}"></script>-->
+            <script type="text/javascript" src="{{ asset('js/jquery.appear.js') }}"></script> <!-- appear js -->
+            <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script> <!-- custom js -->
+
+
+            <script>
+               /* $('cssmenu ul li a').each(function () {
+                    $(this).click(function () {
+                        $(this).css('color', '#e60000');
+                    })
+                })*/
+
+                $('html').scroll(function () {
+                    console.log('menu fix');
+                    $('menuFix').css('position','fix');
+                })
+            </script>
+        {% endblock %}
+    </body>
+</html>

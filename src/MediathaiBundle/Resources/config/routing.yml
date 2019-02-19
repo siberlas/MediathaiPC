@@ -1,0 +1,44 @@
+mediathai_homepage:
+    path:     /
+    defaults: { _controller: MediathaiBundle:Default:index }
+
+mediathai_boutique:
+    path:     /boutique
+    defaults: { _controller: MediathaiBundle:Default:boutique }
+
+mediathai_services:
+    path:     /services/{service_id}
+    defaults: { _controller: MediathaiBundle:Default:services }
+
+mediathai_models:
+    path:     /models/{marque_id}
+    defaults: { _controller: MediathaiBundle:Default:models }
+
+mediathai_couleurs:
+    path:     /couleurs/{model_id}
+    defaults: { _controller: MediathaiBundle:Default:couleurs }
+
+mediathai_pannes:
+    path:     /pannes/{model_id}/{couleur_id}
+    defaults: { _controller: MediathaiBundle:Default:pannes }
+
+mediathai_recapitulatif:
+    path:   /recapitulatif/{pannes}
+    defaults: { _controller: MediathaiBundle:Default:recapitulatif}
+
+mediathai_deletepanne:
+    path:   /deletePanne/{panne}
+    defaults: { _controller: MediathaiBundle:Default:recapitulatif }
+
+mediathai_rendezvous:
+    path:   /rendez-vous/
+    defaults: { _controller: MediathaiBundle:Default:rendezvous }
+
+mediathai_addReparation:
+    path:   /addReparation/
+    defaults: { _controller: MediathaiBundle:Default:addReparation }
+
+mediathai_test:
+    path:   /test/
+    defaults: { _controller: MediathaiBundle:Default:test }
+

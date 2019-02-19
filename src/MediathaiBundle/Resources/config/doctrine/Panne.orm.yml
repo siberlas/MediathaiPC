@@ -1,0 +1,23 @@
+MediathaiBundle\Entity\Panne:
+    type: entity
+    table: null
+    repositoryClass: MediathaiBundle\Repository\PanneRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        prix:
+            type: integer
+    manyToOne:
+      model:
+        targetEntity: Model
+    oneToOne:
+      image:
+        targetEntity: Media
+    lifecycleCallbacks: {  }

@@ -1,0 +1,57 @@
+MediathaiBundle\Entity\Reparation:
+    type: entity
+    table: null
+    repositoryClass: MediathaiBundle\Repository\ReparationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: 255
+        marque:
+            type: string
+            length: 255
+        couleur:
+            type: string
+            length: 255
+            nullable: true
+        pannes:
+            type: object
+        commentaire:
+            type: text
+            nullable: true
+        date:
+            type: string
+        heure:
+            type: string
+        prix:
+            type: integer
+        nomClient:
+            type: string
+            length: 255
+            column: nom_client
+        prenomClient:
+            type: string
+            length: 255
+            column: prenom_client
+        telClient:
+            type: string
+            length: 255
+            column: tel_client
+        mailClient:
+            type: string
+            length: 255
+            column: mail_client
+        adresseClient:
+            type: string
+            length: 255
+            column: adresse_client
+    manyToOne :
+      reparateur:
+        targetEntity: Reparateur
+    lifecycleCallbacks: {  }
+

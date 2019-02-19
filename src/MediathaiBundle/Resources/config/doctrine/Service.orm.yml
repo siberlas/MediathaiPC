@@ -1,0 +1,18 @@
+MediathaiBundle\Entity\Service:
+    type: entity
+    table: null
+    repositoryClass: MediathaiBundle\Repository\ServiceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+    oneToOne:
+          image:
+            targetEntity: Media
+    lifecycleCallbacks: {  }
